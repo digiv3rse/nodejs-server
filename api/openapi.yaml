@@ -1,0 +1,1932 @@
+openapi: 3.0.0
+info:
+  title: DiGi Moda Runway Gallery Rest Endpoints
+  description: This OpenAPI specification is for rest API DiGi Moda Runway Gallery
+  version: 0.0.1
+servers:
+- url: /
+paths:
+  /api/rest/season:
+    get:
+      summary: season
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        query season {
+          season {
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestSeasonGET
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Responses for GET /api/rest/season
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      x-swagger-router-controller: Default
+    post:
+      summary: insert_season_one
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation insert_season_one($object: season_insert_input!) {
+          insert_season_one(object: $object) {
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestSeasonPOST
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rest_season_body'
+        required: true
+      responses:
+        "200":
+          description: Responses for POST /api/rest/season
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+      x-swagger-router-controller: Default
+  /api/rest/season/{id}:
+    get:
+      summary: season_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        query season_by_pk($id: String!) {
+          season_by_pk(id: $id) {
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestSeasonIdGET
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: "Responses for GET /api/rest/season/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+      x-swagger-router-controller: Default
+    post:
+      summary: update_season_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation update_season_by_pk($id: String!, $object: season_set_input!) {
+          update_season_by_pk(pk_columns: {id: $id}, _set: $object) {
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestSeasonIdPOST
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/season_id_body'
+        required: true
+      responses:
+        "200":
+          description: "Responses for POST /api/rest/season/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_3'
+      x-swagger-router-controller: Default
+    delete:
+      summary: delete_season_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation delete_season_by_pk($id: String!) {
+          delete_season_by_pk(id: $id) {
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestSeasonIdDELETE
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/season_id_body_1'
+        required: false
+      responses:
+        "200":
+          description: "Responses for DELETE /api/rest/season/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_4'
+      x-swagger-router-controller: Default
+  /api/rest/collection:
+    get:
+      summary: collection
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        query collection {
+          collection {
+            brand_id
+            cover
+            createdAt
+            id
+            looks
+            name
+            seasonId
+            type
+            updatedAt
+          }
+        }
+
+        ```
+      operationId: apiRestCollectionGET
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Responses for GET /api/rest/collection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_5'
+      x-swagger-router-controller: Default
+    post:
+      summary: insert_collection_one
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation insert_collection_one($object: collection_insert_input!) {
+          insert_collection_one(object: $object) {
+            brand_id
+            cover
+            createdAt
+            id
+            looks
+            name
+            seasonId
+            type
+            updatedAt
+          }
+        }
+
+        ```
+      operationId: apiRestCollectionPOST
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rest_collection_body'
+        required: true
+      responses:
+        "200":
+          description: Responses for POST /api/rest/collection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_6'
+      x-swagger-router-controller: Default
+  /api/rest/collection/{id}:
+    get:
+      summary: collection_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        query collection_by_pk($id: String!) {
+          collection_by_pk(id: $id) {
+            brand_id
+            cover
+            createdAt
+            id
+            looks
+            name
+            seasonId
+            type
+            updatedAt
+          }
+        }
+
+        ```
+      operationId: apiRestCollectionIdGET
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/collection_id_body'
+        required: false
+      responses:
+        "200":
+          description: "Responses for GET /api/rest/collection/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_7'
+      x-swagger-router-controller: Default
+    post:
+      summary: update_collection_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation update_collection_by_pk($id: String!, $object: collection_set_input!) {
+          update_collection_by_pk(pk_columns: {id: $id}, _set: $object) {
+            brand_id
+            cover
+            createdAt
+            id
+            looks
+            name
+            seasonId
+            type
+            updatedAt
+          }
+        }
+
+        ```
+      operationId: apiRestCollectionIdPOST
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/collection_id_body_1'
+        required: true
+      responses:
+        "200":
+          description: "Responses for POST /api/rest/collection/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_8'
+      x-swagger-router-controller: Default
+    delete:
+      summary: delete_collection_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation delete_collection_by_pk($id: String!) {
+          delete_collection_by_pk(id: $id) {
+            brand_id
+            cover
+            createdAt
+            id
+            looks
+            name
+            seasonId
+            type
+            updatedAt
+          }
+        }
+
+        ```
+      operationId: apiRestCollectionIdDELETE
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/collection_id_body_2'
+        required: false
+      responses:
+        "200":
+          description: "Responses for DELETE /api/rest/collection/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_9'
+      x-swagger-router-controller: Default
+  /api/rest/brand:
+    get:
+      summary: brand
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        query brand {
+          brand {
+            avatar
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestBrandGET
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Responses for GET /api/rest/brand
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_10'
+      x-swagger-router-controller: Default
+    post:
+      summary: insert_brand_one
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation insert_brand_one($object: brand_insert_input!) {
+          insert_brand_one(object: $object) {
+            avatar
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestBrandPOST
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rest_brand_body'
+        required: true
+      responses:
+        "200":
+          description: Responses for POST /api/rest/brand
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_11'
+      x-swagger-router-controller: Default
+  /api/rest/brand/{id}:
+    get:
+      summary: brand_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        query brand_by_pk($id: String!) {
+          brand_by_pk(id: $id) {
+            avatar
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestBrandIdGET
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/brand_id_body'
+        required: false
+      responses:
+        "200":
+          description: "Responses for GET /api/rest/brand/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_12'
+      x-swagger-router-controller: Default
+    post:
+      summary: update_brand_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation update_brand_by_pk($id: String!, $object: brand_set_input!) {
+          update_brand_by_pk(pk_columns: {id: $id}, _set: $object) {
+            avatar
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestBrandIdPOST
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/brand_id_body_1'
+        required: true
+      responses:
+        "200":
+          description: "Responses for POST /api/rest/brand/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_13'
+      x-swagger-router-controller: Default
+    delete:
+      summary: delete_brand_by_pk
+      description: |-
+        ***
+        The GraphQl query for this endpoint is:
+        ``` graphql
+        mutation delete_brand_by_pk($id: String!) {
+          delete_brand_by_pk(id: $id) {
+            avatar
+            id
+            name
+          }
+        }
+
+        ```
+      operationId: apiRestBrandIdDELETE
+      parameters:
+      - name: x-hasura-admin-secret
+        in: header
+        description: Your x-hasura-admin-secret will be used for authentication of
+          the API request.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: _"id" is required (enter it either in parameters or request body)_
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as
+          a JSON object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/brand_id_body_2'
+        required: false
+      responses:
+        "200":
+          description: "Responses for DELETE /api/rest/brand/{id}"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_14'
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    collection_constraint!:
+      title: collection_constraint
+      type: string
+      description: unique or primary key constraints on table "collection"
+      nullable: false
+      enum:
+      - collection_id_brandId_seasonId_key
+      - collection_pkey
+    String_comparison_exp:
+      title: String_comparison_exp
+      type: object
+      properties:
+        _eq:
+          title: String
+          type: string
+          nullable: true
+        _gt:
+          title: String
+          type: string
+          nullable: true
+        _gte:
+          title: String
+          type: string
+          nullable: true
+        _ilike:
+          title: String
+          type: string
+          nullable: true
+        _in:
+          type: array
+          nullable: true
+          items:
+            title: String
+            type: string
+            nullable: false
+        _iregex:
+          title: String
+          type: string
+          nullable: true
+        _is_null:
+          title: Boolean
+          type: boolean
+          nullable: true
+        _like:
+          title: String
+          type: string
+          nullable: true
+        _lt:
+          title: String
+          type: string
+          nullable: true
+        _lte:
+          title: String
+          type: string
+          nullable: true
+        _neq:
+          title: String
+          type: string
+          nullable: true
+        _nilike:
+          title: String
+          type: string
+          nullable: true
+        _nin:
+          type: array
+          nullable: true
+          items:
+            title: String
+            type: string
+            nullable: false
+        _niregex:
+          title: String
+          type: string
+          nullable: true
+        _nlike:
+          title: String
+          type: string
+          nullable: true
+        _nregex:
+          title: String
+          type: string
+          nullable: true
+        _nsimilar:
+          title: String
+          type: string
+          nullable: true
+        _regex:
+          title: String
+          type: string
+          nullable: true
+        _similar:
+          title: String
+          type: string
+          nullable: true
+      description: Boolean expression to compare columns of type "String". All fields
+        are combined with logical 'AND'.
+      nullable: true
+    collection_select_column!:
+      title: collection_select_column
+      type: string
+      description: select columns of table "collection"
+      nullable: false
+      enum:
+      - brand_id
+      - cover
+      - createdAt
+      - id
+      - looks
+      - name
+      - seasonId
+      - type
+      - updatedAt
+    Int_comparison_exp!:
+      title: Int_comparison_exp
+      type: object
+      properties:
+        _eq:
+          title: Int
+          type: integer
+          nullable: true
+        _gt:
+          title: Int
+          type: integer
+          nullable: true
+        _gte:
+          title: Int
+          type: integer
+          nullable: true
+        _in:
+          type: array
+          nullable: true
+          items:
+            title: Int
+            type: integer
+            nullable: false
+        _is_null:
+          title: Boolean
+          type: boolean
+          nullable: true
+        _lt:
+          title: Int
+          type: integer
+          nullable: true
+        _lte:
+          title: Int
+          type: integer
+          nullable: true
+        _neq:
+          title: Int
+          type: integer
+          nullable: true
+        _nin:
+          type: array
+          nullable: true
+          items:
+            title: Int
+            type: integer
+            nullable: false
+      description: Boolean expression to compare columns of type "Int". All fields
+        are combined with logical 'AND'.
+      nullable: false
+    collection_aggregate_bool_exp_count:
+      title: collection_aggregate_bool_exp_count
+      type: object
+      properties:
+        arguments:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/collection_select_column!'
+        distinct:
+          title: Boolean
+          type: boolean
+          nullable: true
+        filter:
+          $ref: '#/components/schemas/collection_bool_exp'
+        predicate:
+          $ref: '#/components/schemas/Int_comparison_exp!'
+      nullable: true
+    collection_aggregate_bool_exp:
+      title: collection_aggregate_bool_exp
+      type: object
+      properties:
+        count:
+          $ref: '#/components/schemas/collection_aggregate_bool_exp_count'
+      nullable: true
+    brand_bool_exp!:
+      title: brand_bool_exp
+      type: object
+      properties:
+        _and:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/brand_bool_exp!'
+        _not:
+          $ref: '#/components/schemas/brand_bool_exp'
+        _or:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/brand_bool_exp!'
+        avatar:
+          $ref: '#/components/schemas/String_comparison_exp'
+        collections:
+          $ref: '#/components/schemas/collection_bool_exp'
+        collections_aggregate:
+          $ref: '#/components/schemas/collection_aggregate_bool_exp'
+        id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        name:
+          $ref: '#/components/schemas/String_comparison_exp'
+      description: Boolean expression to filter rows from the table "brand". All fields
+        are combined with a logical 'AND'.
+      nullable: false
+    brand_bool_exp:
+      title: brand_bool_exp
+      type: object
+      properties:
+        _and:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/brand_bool_exp!'
+        _not:
+          $ref: '#/components/schemas/brand_bool_exp'
+        _or:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/brand_bool_exp!'
+        avatar:
+          $ref: '#/components/schemas/String_comparison_exp'
+        collections:
+          $ref: '#/components/schemas/collection_bool_exp'
+        collections_aggregate:
+          $ref: '#/components/schemas/collection_aggregate_bool_exp'
+        id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        name:
+          $ref: '#/components/schemas/String_comparison_exp'
+      description: Boolean expression to filter rows from the table "brand". All fields
+        are combined with a logical 'AND'.
+      nullable: true
+    type:
+      title: type
+      nullable: true
+    type!:
+      title: type
+      nullable: false
+    type_comparison_exp:
+      title: type_comparison_exp
+      type: object
+      properties:
+        _eq:
+          $ref: '#/components/schemas/type'
+        _gt:
+          $ref: '#/components/schemas/type'
+        _gte:
+          $ref: '#/components/schemas/type'
+        _in:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/type!'
+        _is_null:
+          title: Boolean
+          type: boolean
+          nullable: true
+        _lt:
+          $ref: '#/components/schemas/type'
+        _lte:
+          $ref: '#/components/schemas/type'
+        _neq:
+          $ref: '#/components/schemas/type'
+        _nin:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/type!'
+      description: Boolean expression to compare columns of type "type". All fields
+        are combined with logical 'AND'.
+      nullable: true
+    timestamp:
+      title: timestamp
+      nullable: true
+    timestamp!:
+      title: timestamp
+      nullable: false
+    timestamp_comparison_exp:
+      title: timestamp_comparison_exp
+      type: object
+      properties:
+        _eq:
+          $ref: '#/components/schemas/timestamp'
+        _gt:
+          $ref: '#/components/schemas/timestamp'
+        _gte:
+          $ref: '#/components/schemas/timestamp'
+        _in:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/timestamp!'
+        _is_null:
+          title: Boolean
+          type: boolean
+          nullable: true
+        _lt:
+          $ref: '#/components/schemas/timestamp'
+        _lte:
+          $ref: '#/components/schemas/timestamp'
+        _neq:
+          $ref: '#/components/schemas/timestamp'
+        _nin:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/timestamp!'
+      description: Boolean expression to compare columns of type "timestamp". All
+        fields are combined with logical 'AND'.
+      nullable: true
+    season_bool_exp!:
+      title: season_bool_exp
+      type: object
+      properties:
+        _and:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/season_bool_exp!'
+        _not:
+          $ref: '#/components/schemas/season_bool_exp'
+        _or:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/season_bool_exp!'
+        collections:
+          $ref: '#/components/schemas/collection_bool_exp'
+        collections_aggregate:
+          $ref: '#/components/schemas/collection_aggregate_bool_exp'
+        id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        name:
+          $ref: '#/components/schemas/String_comparison_exp'
+      description: Boolean expression to filter rows from the table "season". All
+        fields are combined with a logical 'AND'.
+      nullable: false
+    season_bool_exp:
+      title: season_bool_exp
+      type: object
+      properties:
+        _and:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/season_bool_exp!'
+        _not:
+          $ref: '#/components/schemas/season_bool_exp'
+        _or:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/season_bool_exp!'
+        collections:
+          $ref: '#/components/schemas/collection_bool_exp'
+        collections_aggregate:
+          $ref: '#/components/schemas/collection_aggregate_bool_exp'
+        id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        name:
+          $ref: '#/components/schemas/String_comparison_exp'
+      description: Boolean expression to filter rows from the table "season". All
+        fields are combined with a logical 'AND'.
+      nullable: true
+    jsonb:
+      title: jsonb
+      nullable: true
+    jsonb!:
+      title: jsonb
+      nullable: false
+    jsonb_cast_exp:
+      title: jsonb_cast_exp
+      type: object
+      properties:
+        String:
+          $ref: '#/components/schemas/String_comparison_exp'
+      nullable: true
+    jsonb_comparison_exp:
+      title: jsonb_comparison_exp
+      type: object
+      properties:
+        _cast:
+          $ref: '#/components/schemas/jsonb_cast_exp'
+        _contained_in:
+          $ref: '#/components/schemas/jsonb'
+        _contains:
+          $ref: '#/components/schemas/jsonb'
+        _eq:
+          $ref: '#/components/schemas/jsonb'
+        _gt:
+          $ref: '#/components/schemas/jsonb'
+        _gte:
+          $ref: '#/components/schemas/jsonb'
+        _has_key:
+          title: String
+          type: string
+          nullable: true
+        _has_keys_all:
+          type: array
+          nullable: true
+          items:
+            title: String
+            type: string
+            nullable: false
+        _has_keys_any:
+          type: array
+          nullable: true
+          items:
+            title: String
+            type: string
+            nullable: false
+        _in:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/jsonb!'
+        _is_null:
+          title: Boolean
+          type: boolean
+          nullable: true
+        _lt:
+          $ref: '#/components/schemas/jsonb'
+        _lte:
+          $ref: '#/components/schemas/jsonb'
+        _neq:
+          $ref: '#/components/schemas/jsonb'
+        _nin:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/jsonb!'
+      description: Boolean expression to compare columns of type "jsonb". All fields
+        are combined with logical 'AND'.
+      nullable: true
+    collection_bool_exp!:
+      title: collection_bool_exp
+      type: object
+      properties:
+        _and:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/collection_bool_exp!'
+        _not:
+          $ref: '#/components/schemas/collection_bool_exp'
+        _or:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/collection_bool_exp!'
+        brand:
+          $ref: '#/components/schemas/brand_bool_exp'
+        brand_id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        cover:
+          $ref: '#/components/schemas/String_comparison_exp'
+        createdAt:
+          $ref: '#/components/schemas/timestamp_comparison_exp'
+        id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        looks:
+          $ref: '#/components/schemas/jsonb_comparison_exp'
+        name:
+          $ref: '#/components/schemas/String_comparison_exp'
+        season:
+          $ref: '#/components/schemas/season_bool_exp'
+        seasonId:
+          $ref: '#/components/schemas/String_comparison_exp'
+        type:
+          $ref: '#/components/schemas/type_comparison_exp'
+        updatedAt:
+          $ref: '#/components/schemas/timestamp_comparison_exp'
+      description: Boolean expression to filter rows from the table "collection".
+        All fields are combined with a logical 'AND'.
+      nullable: false
+    collection_bool_exp:
+      title: collection_bool_exp
+      type: object
+      properties:
+        _and:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/collection_bool_exp!'
+        _not:
+          $ref: '#/components/schemas/collection_bool_exp'
+        _or:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/collection_bool_exp!'
+        brand:
+          $ref: '#/components/schemas/brand_bool_exp'
+        brand_id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        cover:
+          $ref: '#/components/schemas/String_comparison_exp'
+        createdAt:
+          $ref: '#/components/schemas/timestamp_comparison_exp'
+        id:
+          $ref: '#/components/schemas/String_comparison_exp'
+        looks:
+          $ref: '#/components/schemas/jsonb_comparison_exp'
+        name:
+          $ref: '#/components/schemas/String_comparison_exp'
+        season:
+          $ref: '#/components/schemas/season_bool_exp'
+        seasonId:
+          $ref: '#/components/schemas/String_comparison_exp'
+        type:
+          $ref: '#/components/schemas/type_comparison_exp'
+        updatedAt:
+          $ref: '#/components/schemas/timestamp_comparison_exp'
+      description: Boolean expression to filter rows from the table "collection".
+        All fields are combined with a logical 'AND'.
+      nullable: true
+    collection_update_column!:
+      title: collection_update_column
+      type: string
+      description: update columns of table "collection"
+      nullable: false
+      enum:
+      - brand_id
+      - cover
+      - createdAt
+      - id
+      - looks
+      - name
+      - seasonId
+      - type
+      - updatedAt
+    collection_on_conflict:
+      title: collection_on_conflict
+      type: object
+      properties:
+        constraint:
+          $ref: '#/components/schemas/collection_constraint!'
+        update_columns:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/collection_update_column!'
+        where:
+          $ref: '#/components/schemas/collection_bool_exp'
+      description: on_conflict condition type for table "collection"
+      nullable: true
+    brand_constraint!:
+      title: brand_constraint
+      type: string
+      description: unique or primary key constraints on table "brand"
+      nullable: false
+      enum:
+      - brand_id_key
+      - brand_id_name_key
+      - brand_pkey
+    brand_update_column!:
+      title: brand_update_column
+      type: string
+      description: update columns of table "brand"
+      nullable: false
+      enum:
+      - avatar
+      - id
+      - name
+    brand_on_conflict:
+      title: brand_on_conflict
+      type: object
+      properties:
+        constraint:
+          $ref: '#/components/schemas/brand_constraint!'
+        update_columns:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/brand_update_column!'
+        where:
+          $ref: '#/components/schemas/brand_bool_exp'
+      description: on_conflict condition type for table "brand"
+      nullable: true
+    brand_insert_input!:
+      title: brand_insert_input
+      type: object
+      properties:
+        avatar:
+          title: String
+          type: string
+          nullable: true
+        collections:
+          $ref: '#/components/schemas/collection_arr_rel_insert_input'
+        id:
+          title: String
+          type: string
+          nullable: true
+        name:
+          title: String
+          type: string
+          nullable: true
+      description: input type for inserting data into table "brand"
+      nullable: false
+    brand_obj_rel_insert_input:
+      title: brand_obj_rel_insert_input
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/brand_insert_input!'
+        on_conflict:
+          $ref: '#/components/schemas/brand_on_conflict'
+      description: input type for inserting object relation for remote table "brand"
+      nullable: true
+    season_constraint!:
+      title: season_constraint
+      type: string
+      description: unique or primary key constraints on table "season"
+      nullable: false
+      enum:
+      - season_id_key
+      - season_pkey
+    season_update_column!:
+      title: season_update_column
+      type: string
+      description: update columns of table "season"
+      nullable: false
+      enum:
+      - id
+      - name
+    season_on_conflict:
+      title: season_on_conflict
+      type: object
+      properties:
+        constraint:
+          $ref: '#/components/schemas/season_constraint!'
+        update_columns:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/season_update_column!'
+        where:
+          $ref: '#/components/schemas/season_bool_exp'
+      description: on_conflict condition type for table "season"
+      nullable: true
+    season_obj_rel_insert_input:
+      title: season_obj_rel_insert_input
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/season_insert_input!'
+        on_conflict:
+          $ref: '#/components/schemas/season_on_conflict'
+      description: input type for inserting object relation for remote table "season"
+      nullable: true
+    collection_insert_input!:
+      title: collection_insert_input
+      type: object
+      properties:
+        brand:
+          $ref: '#/components/schemas/brand_obj_rel_insert_input'
+        brand_id:
+          title: String
+          type: string
+          nullable: true
+        cover:
+          title: String
+          type: string
+          nullable: true
+        createdAt:
+          $ref: '#/components/schemas/timestamp'
+        id:
+          title: String
+          type: string
+          nullable: true
+        looks:
+          $ref: '#/components/schemas/jsonb'
+        name:
+          title: String
+          type: string
+          nullable: true
+        season:
+          $ref: '#/components/schemas/season_obj_rel_insert_input'
+        seasonId:
+          title: String
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/type'
+        updatedAt:
+          $ref: '#/components/schemas/timestamp'
+      description: input type for inserting data into table "collection"
+      nullable: false
+    collection_arr_rel_insert_input:
+      title: collection_arr_rel_insert_input
+      type: object
+      properties:
+        data:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/collection_insert_input!'
+        on_conflict:
+          $ref: '#/components/schemas/collection_on_conflict'
+      description: input type for inserting array relation for remote table "collection"
+      nullable: true
+    season_insert_input!:
+      title: season_insert_input
+      type: object
+      properties:
+        collections:
+          $ref: '#/components/schemas/collection_arr_rel_insert_input'
+        id:
+          title: String
+          type: string
+          nullable: true
+        name:
+          title: String
+          type: string
+          nullable: true
+      description: input type for inserting data into table "season"
+      nullable: false
+    season_set_input!:
+      title: season_set_input
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: true
+        name:
+          title: String
+          type: string
+          nullable: true
+      description: input type for updating data in table "season"
+      nullable: false
+    collection_set_input!:
+      title: collection_set_input
+      type: object
+      properties:
+        brand_id:
+          title: String
+          type: string
+          nullable: true
+        cover:
+          title: String
+          type: string
+          nullable: true
+        createdAt:
+          $ref: '#/components/schemas/timestamp'
+        id:
+          title: String
+          type: string
+          nullable: true
+        looks:
+          $ref: '#/components/schemas/jsonb'
+        name:
+          title: String
+          type: string
+          nullable: true
+        seasonId:
+          title: String
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/type'
+        updatedAt:
+          $ref: '#/components/schemas/timestamp'
+      description: input type for updating data in table "collection"
+      nullable: false
+    brand_set_input!:
+      title: brand_set_input
+      type: object
+      properties:
+        avatar:
+          title: String
+          type: string
+          nullable: true
+        id:
+          title: String
+          type: string
+          nullable: true
+        name:
+          title: String
+          type: string
+          nullable: true
+      description: input type for updating data in table "brand"
+      nullable: false
+    inline_response_200:
+      properties:
+        season:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/season'
+      example:
+        season:
+        - name: name
+          id: id
+        - name: name
+          id: id
+    rest_season_body:
+      type: object
+      properties:
+        object:
+          $ref: '#/components/schemas/season_insert_input!'
+    inline_response_200_1:
+      properties:
+        insert_season_one:
+          $ref: '#/components/schemas/season_1'
+      example:
+        insert_season_one:
+          name: name
+          id: id
+    inline_response_200_2:
+      properties:
+        season_by_pk:
+          $ref: '#/components/schemas/season_1'
+      example:
+        season_by_pk:
+          name: name
+          id: id
+    season_id_body:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+        object:
+          $ref: '#/components/schemas/season_set_input!'
+    inline_response_200_3:
+      properties:
+        update_season_by_pk:
+          $ref: '#/components/schemas/season_1'
+      example:
+        update_season_by_pk:
+          name: name
+          id: id
+    season_id_body_1:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+    inline_response_200_4:
+      properties:
+        delete_season_by_pk:
+          $ref: '#/components/schemas/season_1'
+      example:
+        delete_season_by_pk:
+          name: name
+          id: id
+    inline_response_200_5:
+      properties:
+        collection:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/collection'
+      example:
+        collection:
+        - cover: cover
+          createdAt: ""
+          looks: ""
+          seasonId: seasonId
+          name: name
+          id: id
+          type: ""
+          brand_id: brand_id
+          updatedAt: null
+        - cover: cover
+          createdAt: ""
+          looks: ""
+          seasonId: seasonId
+          name: name
+          id: id
+          type: ""
+          brand_id: brand_id
+          updatedAt: null
+    rest_collection_body:
+      type: object
+      properties:
+        object:
+          $ref: '#/components/schemas/collection_insert_input!'
+    inline_response_200_6:
+      properties:
+        insert_collection_one:
+          $ref: '#/components/schemas/collection_1'
+      example:
+        insert_collection_one:
+          cover: cover
+          createdAt: ""
+          looks: ""
+          seasonId: seasonId
+          name: name
+          id: id
+          type: ""
+          brand_id: brand_id
+          updatedAt: null
+    collection_id_body:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+    inline_response_200_7:
+      properties:
+        collection_by_pk:
+          $ref: '#/components/schemas/collection_1'
+      example:
+        collection_by_pk:
+          cover: cover
+          createdAt: ""
+          looks: ""
+          seasonId: seasonId
+          name: name
+          id: id
+          type: ""
+          brand_id: brand_id
+          updatedAt: null
+    collection_id_body_1:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+        object:
+          $ref: '#/components/schemas/collection_set_input!'
+    inline_response_200_8:
+      properties:
+        update_collection_by_pk:
+          $ref: '#/components/schemas/collection_1'
+      example:
+        update_collection_by_pk:
+          cover: cover
+          createdAt: ""
+          looks: ""
+          seasonId: seasonId
+          name: name
+          id: id
+          type: ""
+          brand_id: brand_id
+          updatedAt: null
+    collection_id_body_2:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+    inline_response_200_9:
+      properties:
+        delete_collection_by_pk:
+          $ref: '#/components/schemas/collection_1'
+      example:
+        delete_collection_by_pk:
+          cover: cover
+          createdAt: ""
+          looks: ""
+          seasonId: seasonId
+          name: name
+          id: id
+          type: ""
+          brand_id: brand_id
+          updatedAt: null
+    inline_response_200_10:
+      properties:
+        brand:
+          type: array
+          nullable: false
+          items:
+            $ref: '#/components/schemas/brand'
+      example:
+        brand:
+        - name: name
+          avatar: avatar
+          id: id
+        - name: name
+          avatar: avatar
+          id: id
+    rest_brand_body:
+      type: object
+      properties:
+        object:
+          $ref: '#/components/schemas/brand_insert_input!'
+    inline_response_200_11:
+      properties:
+        insert_brand_one:
+          $ref: '#/components/schemas/brand_1'
+      example:
+        insert_brand_one:
+          name: name
+          avatar: avatar
+          id: id
+    brand_id_body:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+    inline_response_200_12:
+      properties:
+        brand_by_pk:
+          $ref: '#/components/schemas/brand_1'
+      example:
+        brand_by_pk:
+          name: name
+          avatar: avatar
+          id: id
+    brand_id_body_1:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+        object:
+          $ref: '#/components/schemas/brand_set_input!'
+    inline_response_200_13:
+      properties:
+        update_brand_by_pk:
+          $ref: '#/components/schemas/brand_1'
+      example:
+        update_brand_by_pk:
+          name: name
+          avatar: avatar
+          id: id
+    brand_id_body_2:
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+    inline_response_200_14:
+      properties:
+        delete_brand_by_pk:
+          $ref: '#/components/schemas/brand_1'
+      example:
+        delete_brand_by_pk:
+          name: name
+          avatar: avatar
+          id: id
+    season:
+      title: season
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+        name:
+          title: String
+          type: string
+          nullable: false
+      description: columns and relationships of "season"
+      nullable: false
+      example:
+        name: name
+        id: id
+    season_1:
+      title: season
+      type: object
+      properties:
+        id:
+          title: String
+          type: string
+          nullable: false
+        name:
+          title: String
+          type: string
+          nullable: false
+      description: columns and relationships of "season"
+      nullable: true
+      example:
+        name: name
+        id: id
+    collection:
+      title: collection
+      type: object
+      properties:
+        brand_id:
+          title: String
+          type: string
+          nullable: false
+        cover:
+          title: String
+          type: string
+          nullable: false
+        createdAt:
+          $ref: '#/components/schemas/timestamp!'
+        id:
+          title: String
+          type: string
+          nullable: false
+        looks:
+          $ref: '#/components/schemas/jsonb!'
+        name:
+          title: String
+          type: string
+          nullable: false
+        seasonId:
+          title: String
+          type: string
+          nullable: false
+        type:
+          $ref: '#/components/schemas/type!'
+        updatedAt:
+          $ref: '#/components/schemas/timestamp!'
+      description: columns and relationships of "collection"
+      nullable: false
+      example:
+        cover: cover
+        createdAt: ""
+        looks: ""
+        seasonId: seasonId
+        name: name
+        id: id
+        type: ""
+        brand_id: brand_id
+        updatedAt: null
+    collection_1:
+      title: collection
+      type: object
+      properties:
+        brand_id:
+          title: String
+          type: string
+          nullable: false
+        cover:
+          title: String
+          type: string
+          nullable: false
+        createdAt:
+          $ref: '#/components/schemas/timestamp!'
+        id:
+          title: String
+          type: string
+          nullable: false
+        looks:
+          $ref: '#/components/schemas/jsonb!'
+        name:
+          title: String
+          type: string
+          nullable: false
+        seasonId:
+          title: String
+          type: string
+          nullable: false
+        type:
+          $ref: '#/components/schemas/type!'
+        updatedAt:
+          $ref: '#/components/schemas/timestamp!'
+      description: columns and relationships of "collection"
+      nullable: true
+      example:
+        cover: cover
+        createdAt: ""
+        looks: ""
+        seasonId: seasonId
+        name: name
+        id: id
+        type: ""
+        brand_id: brand_id
+        updatedAt: null
+    brand:
+      title: brand
+      type: object
+      properties:
+        avatar:
+          title: String
+          type: string
+          nullable: false
+        id:
+          title: String
+          type: string
+          nullable: false
+        name:
+          title: String
+          type: string
+          nullable: false
+      description: columns and relationships of "brand"
+      nullable: false
+      example:
+        name: name
+        avatar: avatar
+        id: id
+    brand_1:
+      title: brand
+      type: object
+      properties:
+        avatar:
+          title: String
+          type: string
+          nullable: false
+        id:
+          title: String
+          type: string
+          nullable: false
+        name:
+          title: String
+          type: string
+          nullable: false
+      description: columns and relationships of "brand"
+      nullable: true
+      example:
+        name: name
+        avatar: avatar
+        id: id
