@@ -4,13 +4,13 @@
   "description": "This OpenAPI specification is for rest API DiGi Moda Runway Gallery",
   "main": "index.js",
   "scripts": {
-	"prestart": "npm install",
-	"start": "node index.js"
+    "prestart": "npm install",
+    "start": "node index.js"
   },
   "keywords": [
     "swagger"
   ],
-  "license": "Unlicense",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "connect": "^3.2.0",
